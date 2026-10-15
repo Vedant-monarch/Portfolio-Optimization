@@ -1,0 +1,21 @@
+=== FULL UNIVERSE METRICS ===
+  expected_return: 0.417852
+  volatility: 0.096402
+  sharpe_ratio: 4.3345
+  max_drawdown: -0.0348
+  diversification_ratio: 3.2386
+
+=== REDUCED UNIVERSE METRICS ===
+  expected_return: 0.417852
+  volatility: 0.096402
+  sharpe_ratio: 4.3345
+  max_drawdown: -0.0348
+  diversification_ratio: 3.2386
+
+=== FULL vs REDUCED COMPARISON ===
+                       Full Universe  Reduced Universe  Difference  % Change
+expected_return             0.417852          0.417852         0.0       0.0
+volatility                  0.096402          0.096402         0.0       0.0
+sharpe_ratio                4.334500          4.334500         0.0       0.0
+max_drawdown               -0.034800         -0.034800         0.0       0.0
+diversification_ratio       3.238600          3.238600         0.0       0.0

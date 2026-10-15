@@ -1,0 +1,58 @@
+============================================================
+STEP 1 — BUILDING CLUSTERED PORTFOLIO PROBLEM
+============================================================
+ClusteredPortfolioProblem(original=10 assets, reduced=10 assets, n_clusters=10, method='centroid', compression=1.0)
+
+  original_assets: 10
+  reduced_assets: 10
+  n_clusters: 10
+  representative_method: centroid
+  compression_ratio: 1.0
+
+============================================================
+STEP 2 — EVALUATING CLUSTER QUALITY
+============================================================
+                                   value
+metric                                  
+Mean Intra-Cluster Correlation    1.0000
+Inter-Cluster Correlation        -0.0046
+Mean Representative Correlation   1.0000
+Variance Retained                 1.0000
+Average Cluster Size              1.0000
+Num Clusters                     10.0000
+Original Universe Size           10.0000
+Reduced Universe Size            10.0000
+
+============================================================
+STEP 3 — BUILDING QUBO
+============================================================
+  QUBO size : 10 × 10
+  Budget    : 3 assets
+
+============================================================
+STEP 4 — RUNNING QAOA
+============================================================
+[qaoa on pennylane:lightning.qubit]
+  best     : 1100000001  obj=+0.010858  ret=+0.00775  vol=0.03154  ret/vol=+0.246  [feasible]  AAPL, GOOG, CVX
+  cost     : 100 circuits, 0 shots, 0.21s
+  objective: +0.049125 -> +0.014865
+
+============================================================
+STEP 5 — SELECTED REPRESENTATIVES
+============================================================
+  AAPL  (Cluster 1)
+  GOOG  (Cluster 2)
+  CVX  (Cluster 10)
+
+  feasible : True
+  return   : 0.007754
+  volatility: 0.031539
+  sharpe   : 0.2459
+
+=== FINAL RESULT ===
+Selected Assets  : ['AAPL', 'GOOG', 'CVX']
+Selected Clusters: [1, 2, 10]
+Feasible         : True
+Expected Return  : 0.007754
+Volatility       : 0.031539
+Sharpe           : 0.2459

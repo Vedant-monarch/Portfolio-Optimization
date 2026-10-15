@@ -1,0 +1,16 @@
+# Research papers / non-code files in the parent folder
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Cached Yahoo Finance prices (re-downloaded automatically, ~10 MB)
+cluster_qpo/data/cache/

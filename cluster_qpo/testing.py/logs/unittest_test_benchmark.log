@@ -1,0 +1,39 @@
+
+
+============================================================
+CLUSTERING BENCHMARK REPORT
+============================================================
+
+── Universe Statistics ──
+  full_assets              : 10
+  reduced_assets           : 10
+  compression_ratio        : 1.0
+  assets_removed           : 0
+  reduction_pct            : 0.0
+
+── Clustering Quality ──
+  Mean Intra-Cluster Correlation     : 1.0000
+  Inter-Cluster Correlation          : -0.0046
+  Mean Representative Correlation    : 1.0000
+  Variance Retained                  : 1.0000
+  Average Cluster Size               : 1.0000
+  Num Clusters                       : 10.0000
+  Original Universe Size             : 10.0000
+  Reduced Universe Size              : 10.0000
+
+── Portfolio Metrics ──
+
+  [full_universe]
+    expected_return             : 0.4179
+    volatility                  : 0.0964
+    sharpe_ratio                : 4.3345
+    max_drawdown                : -0.0348
+    diversification_ratio       : 3.2386
+
+  [reduced_universe]
+    expected_return             : 0.4179
+    volatility                  : 0.0964
+    sharpe_ratio                : 4.3345
+    max_drawdown                : -0.0348
+    diversification_ratio       : 3.2386
+
