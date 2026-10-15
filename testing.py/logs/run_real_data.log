@@ -1,0 +1,122 @@
+============================================================
+STEP 1 — LOADING S&P 100 RETURNS
+============================================================
+[loader] Loading prices from cache: prices_2019-01-01_2024-01-01_99t.parquet
+[loader] Returns shape: (1257, 99)
+  Universe : 99 assets
+  Period   : 2019-01-03 → 2023-12-29
+  Days     : 1257
+
+============================================================
+STEP 2 — RUNNING CLUSTERING PIPELINE
+============================================================
+  Original assets   : 99
+  Clusters formed   : 20
+  Representatives   : 20
+
+Representatives:
+           representative  cluster_size
+cluster_id                             
+1                     XOM             4
+2                     BAC             8
+3                      GD             4
+4                       F             2
+5                   BRK-B            16
+6                    AMAT             8
+7                    MSFT            10
+8                    NFLX             2
+9                     ELV             3
+10                   REGN             2
+11                    JNJ             5
+12                    DUK             5
+13                     MO             2
+14                    PEP             5
+15                   COST             2
+16                     HD             2
+17                   CSCO             4
+18                    TMO             5
+19                    SYK             4
+20                    MCO             6
+
+============================================================
+STEP 3 — EVALUATING CLUSTER QUALITY
+============================================================
+                                   value
+metric                                  
+Mean Intra-Cluster Correlation    0.6421
+Inter-Cluster Correlation         0.4276
+Mean Representative Correlation   0.6763
+Variance Retained                 0.1832
+Average Cluster Size              4.9500
+Num Clusters                     20.0000
+Original Universe Size           99.0000
+Reduced Universe Size            20.0000
+
+============================================================
+STEP 4 — INFORMATION LOSS TEST (Full vs Reduced)
+============================================================
+                       Full Universe  Reduced Universe  Difference  % Change
+expected_return             0.211985          0.195535   -0.016450     -7.76
+volatility                  0.212558          0.203956   -0.008602     -4.05
+sharpe_ratio                0.997300          0.958700   -0.038600     -3.87
+max_drawdown               -0.344300         -0.318500    0.025800      7.49
+diversification_ratio       1.512500          1.499900   -0.012600     -0.83
+
+============================================================
+STEP 5 — BENCHMARK REPORT
+============================================================
+
+
+============================================================
+CLUSTERING BENCHMARK REPORT
+============================================================
+
+── Universe Statistics ──
+  full_assets              : 99
+  reduced_assets           : 20
+  compression_ratio        : 0.202
+  assets_removed           : 79
+  reduction_pct            : 79.8
+
+── Clustering Quality ──
+  Mean Intra-Cluster Correlation     : 0.6421
+  Inter-Cluster Correlation          : 0.4276
+  Mean Representative Correlation    : 0.6763
+  Variance Retained                  : 0.1832
+  Average Cluster Size               : 4.9500
+  Num Clusters                       : 20.0000
+  Original Universe Size             : 99.0000
+  Reduced Universe Size              : 20.0000
+
+── Portfolio Metrics ──
+
+  [full_universe]
+    expected_return             : 0.2120
+    volatility                  : 0.2126
+    sharpe_ratio                : 0.9973
+    max_drawdown                : -0.3443
+    diversification_ratio       : 1.5125
+
+  [reduced_universe]
+    expected_return             : 0.1955
+    volatility                  : 0.2040
+    sharpe_ratio                : 0.9587
+    max_drawdown                : -0.3185
+    diversification_ratio       : 1.4999
+
+============================================================
+STEP 6 — VISUALIZING CLUSTERS
+============================================================
+[plots] Saved dendrogram → cluster_qpo/testing.py/dendrogram.png
+/Users/vedant_bobade/Documents/qpo_portfolio_code/cluster_qpo/plots.py:52: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+[plots] Saved heatmap → cluster_qpo/testing.py/heatmap.png
+/Users/vedant_bobade/Documents/qpo_portfolio_code/cluster_qpo/plots.py:115: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+[plots] Saved cluster plot → cluster_qpo/testing.py/cluster_members.png
+/Users/vedant_bobade/Documents/qpo_portfolio_code/cluster_qpo/plots.py:185: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+All plots saved to cluster_qpo/testing.py/
+
+Experiment complete ✅

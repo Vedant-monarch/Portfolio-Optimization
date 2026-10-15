@@ -1,0 +1,39 @@
+[loader] Loading prices from cache: prices_2019-01-01_2024-01-01_99t.parquet
+[loader] Returns shape: (1257, 99)
+
+Universe sp100: 99 assets, 1257 days
+
+[sweep] K=3 reference (exact): ['COST', 'LLY', 'NVDA']
+[sweep] K=4 reference (exact): ['COST', 'LLY', 'NVDA', 'WM']
+[sweep] K=5 reference (greedy+swap): ['NVDA', 'LLY', 'TSLA', 'NOC', 'COST']
+
+====================================================================================================
+SWEEP RESULTS - SP100
+====================================================================================================
+ K   method  n_clusters  % of reference recovered  sharpe  ref_sharpe  overlap                     assets
+ 3 centroid          20                      53.6   1.220       1.644        1           MSFT, REGN, COST
+ 3 centroid          30                      64.5   1.385       1.644        1             TSLA, COST, WM
+ 3 centroid          40                      90.0   1.582       1.644        2            TSLA, LLY, COST
+ 3   sharpe          20                     100.0   1.644       1.644        3            NVDA, LLY, COST
+ 3   sharpe          30                     100.0   1.644       1.644        3            NVDA, LLY, COST
+ 3   sharpe          40                     100.0   1.644       1.644        3            NVDA, LLY, COST
+ 4 centroid          20                      53.5   1.206       1.628        1       GD, MSFT, REGN, COST
+ 4 centroid          30                      71.9   1.415       1.628        2       TSLA, REGN, COST, WM
+ 4 centroid          40                      95.9   1.599       1.628        3        TSLA, LLY, COST, WM
+ 4   sharpe          20                     100.0   1.628       1.628        4        NVDA, LLY, COST, WM
+ 4   sharpe          30                     100.0   1.628       1.628        4        NVDA, LLY, COST, WM
+ 4   sharpe          40                     100.0   1.628       1.628        4        NVDA, LLY, COST, WM
+ 5 centroid          20                      51.7   1.203       1.666        1 XOM, MSFT, REGN, COST, TMO
+ 5 centroid          30                      72.4   1.405       1.666        2   TSLA, REGN, SO, COST, WM
+ 5 centroid          40                      94.8   1.588       1.666        4 NOC, TSLA, LLY, ABBV, COST
+ 5   sharpe          20                     100.0   1.666       1.666        5 NOC, NVDA, TSLA, LLY, COST
+ 5   sharpe          30                     100.0   1.666       1.666        5 NOC, NVDA, TSLA, LLY, COST
+ 5   sharpe          40                     100.0   1.666       1.666        5 NOC, NVDA, TSLA, LLY, COST
+
+Mean % of reference recovered, by method x n_clusters:
+n_clusters     20     30     40
+method                         
+centroid     52.9   69.6   93.6
+sharpe      100.0  100.0  100.0
+
+Saved cluster_qpo/testing.py/sweep_sp100.csv

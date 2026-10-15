@@ -1,0 +1,44 @@
+Representative method: sharpe
+[loader] Loading prices from cache: prices_2019-01-01_2024-01-01_99t.parquet
+[loader] Returns shape: (1257, 99)
+Universe: 99 assets, 1257 days
+
+
+======================================================================
+VALIDATION  K = 3   q = 1.074
+======================================================================
+                                          assets  objective  annual_return  annual_vol  sharpe  % of optimum recovered  beats % of random
+method                                                                                                                                   
+True optimum (full, exact)       COST, LLY, NVDA  -0.002485         0.4473       0.272   1.644                   100.0              100.0
+Greedy (full)                    NVDA, LLY, COST  -0.002485         0.4473       0.272   1.644                   100.0              100.0
+Best of representatives (exact)  NVDA, LLY, COST  -0.002485         0.4473       0.272   1.644                   100.0              100.0
+Cluster + QAOA                   NVDA, LLY, COST  -0.002485         0.4473       0.272   1.644                   100.0              100.0
+
+QAOA feasible (exactly K assets) : True
+QAOA assets also in true optimum : 3 / 3
+
+'% of optimum recovered': 100 = matches the true optimum,
+0 = no better than a random K-asset portfolio.
+
+
+======================================================================
+VALIDATION  K = 4   q = 0.8826
+======================================================================
+                                              assets  objective  annual_return  annual_vol  sharpe  % of optimum recovered  beats % of random
+method                                                                                                                                       
+True optimum (full, exact)       COST, LLY, NVDA, WM   -0.00298         0.3811       0.234   1.628                   100.0              100.0
+Greedy (full)                    NVDA, LLY, COST, WM   -0.00298         0.3811       0.234   1.628                   100.0              100.0
+Best of representatives (exact)  NVDA, LLY, COST, WM   -0.00298         0.3811       0.234   1.628                   100.0              100.0
+Cluster + QAOA                   NVDA, LLY, COST, WM   -0.00298         0.3811       0.234   1.628                   100.0              100.0
+
+QAOA feasible (exactly K assets) : True
+QAOA assets also in true optimum : 4 / 4
+
+'% of optimum recovered': 100 = matches the true optimum,
+0 = no better than a random K-asset portfolio.
+
+======================================================================
+SUMMARY
+======================================================================
+K=3: QAOA recovers 100.0% of optimum | Sharpe 1.64 vs optimum 1.64 | overlap 3/3 | feasible=True
+K=4: QAOA recovers 100.0% of optimum | Sharpe 1.63 vs optimum 1.63 | overlap 4/4 | feasible=True

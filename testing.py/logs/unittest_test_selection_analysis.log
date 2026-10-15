@@ -1,0 +1,100 @@
+============================================================
+STEP 1 — BUILDING CLUSTERED PORTFOLIO PROBLEM
+============================================================
+ClusteredPortfolioProblem(original=10 assets, reduced=10 assets, n_clusters=10, method='centroid', compression=1.0)
+
+  original_assets: 10
+  reduced_assets: 10
+  n_clusters: 10
+  representative_method: centroid
+  compression_ratio: 1.0
+
+============================================================
+STEP 2 — EVALUATING CLUSTER QUALITY
+============================================================
+                                   value
+metric                                  
+Mean Intra-Cluster Correlation    1.0000
+Inter-Cluster Correlation        -0.0046
+Mean Representative Correlation   1.0000
+Variance Retained                 1.0000
+Average Cluster Size              1.0000
+Num Clusters                     10.0000
+Original Universe Size           10.0000
+Reduced Universe Size            10.0000
+
+============================================================
+STEP 3 — BUILDING QUBO
+============================================================
+  QUBO size : 10 × 10
+  Budget    : 3 assets
+
+============================================================
+STEP 4 — RUNNING QAOA
+============================================================
+[qaoa on pennylane:lightning.qubit]
+  best     : 1100000001  obj=+0.010858  ret=+0.00775  vol=0.03154  ret/vol=+0.246  [feasible]  AAPL, GOOG, CVX
+  cost     : 100 circuits, 0 shots, 0.21s
+  objective: +0.049125 -> +0.014865
+
+============================================================
+STEP 5 — SELECTED REPRESENTATIVES
+============================================================
+  AAPL  (Cluster 1)
+  GOOG  (Cluster 2)
+  CVX  (Cluster 10)
+
+  feasible : True
+  return   : 0.007754
+  volatility: 0.031539
+  sharpe   : 0.2459
+
+
+============================================================
+SELECTION ANALYSIS REPORT
+============================================================
+
+── Cluster Coverage ──
+  Selected Clusters    : [1, 2, 10]
+  Clusters Selected    : 3 / 10
+  Assets Represented   : 3 / 10
+  Coverage Ratio       : 30.00%
+
+── Diversity ──
+  Mean Pairwise Corr   : -0.0774
+  Min Pairwise Corr    : -0.1304
+  Max Pairwise Corr    : 0.0247
+  Diversity Score      : 1.0774
+  Avg Selected Cluster : 1.00 assets
+
+── Asset Explanations ──
+
+  AAPL  (Cluster 1)
+    Members    : ['AAPL']
+    Return     : 0.002017
+    Volatility : 0.018143
+    Sharpe     : 0.1112
+    Reason     : Only asset in cluster — selected by default.
+
+  GOOG  (Cluster 2)
+    Members    : ['GOOG']
+    Return     : 0.002454
+    Volatility : 0.021349
+    Sharpe     : 0.1150
+    Reason     : Only asset in cluster — selected by default.
+
+  CVX  (Cluster 10)
+    Members    : ['CVX']
+    Return     : 0.003283
+    Volatility : 0.019790
+    Sharpe     : 0.1659
+    Reason     : Only asset in cluster — selected by default.
+
+=== SUMMARY TABLE ===
+       cluster_id  cluster_size  ...  sharpe_like  mean_intra_corr
+asset                            ...                              
+AAPL            1             1  ...       0.1112              1.0
+GOOG            2             1  ...       0.1150              1.0
+CVX            10             1  ...       0.1659              1.0
+
+[3 rows x 6 columns]

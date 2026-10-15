@@ -1,0 +1,57 @@
+=== SUMMARY ===
+{'original_assets': 10, 'reduced_assets': 10, 'n_clusters': 20, 'representative_method': 'centroid', 'compression_ratio': 1.0}
+
+=== REPR ===
+ClusteredPortfolioProblem(original=10 assets, reduced=10 assets, n_clusters=20, method='centroid', compression=1.0)
+
+=== ASSET NAMES ===
+['AAPL', 'GOOG', 'MSFT', 'AMZN', 'TSLA', 'JPM', 'GS', 'BAC', 'XOM', 'CVX']
+
+=== mu shape ===
+(10,)
+AAPL    0.002017
+GOOG    0.002454
+MSFT    0.001027
+AMZN    0.000817
+TSLA    0.001994
+JPM     0.001901
+GS     -0.000291
+BAC     0.001899
+XOM     0.001482
+CVX     0.003283
+dtype: float64
+
+=== sigma shape ===
+(10, 10)
+
+=== REPRESENTATIVES ===
+           representative  cluster_size
+cluster_id                             
+1                    AAPL             1
+2                    GOOG             1
+3                    MSFT             1
+4                    AMZN             1
+5                    TSLA             1
+6                     JPM             1
+7                      GS             1
+8                     BAC             1
+9                     XOM             1
+10                    CVX             1
+
+=== CLUSTER MAPPING ===
+  Cluster 1: ['AAPL']
+  Cluster 2: ['GOOG']
+  Cluster 3: ['MSFT']
+  Cluster 4: ['AMZN']
+  Cluster 5: ['TSLA']
+  Cluster 6: ['JPM']
+  Cluster 7: ['GS']
+  Cluster 8: ['BAC']
+  Cluster 9: ['XOM']
+  Cluster 10: ['CVX']
+
+=== QUBO READY INPUTS ===
+  mu:    (10,)
+  sigma: (10, 10)
+
+  → Ready to pass into build_portfolio_qubo(mu, sigma)

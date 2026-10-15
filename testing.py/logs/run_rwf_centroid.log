@@ -1,0 +1,52 @@
+[loader] Loading prices from cache: prices_2014-01-01_2024-01-01_397t.parquet
+[loader] Returns shape: (2314, 368)
+
+Universe sp500: 368 assets, 2314 days (2014-10-21 -> 2023-12-29)
+Representative method: centroid
+
+[walk-forward] fold 1 (2016-10-20..2017-04-21) K=3 done
+[walk-forward] fold 1 (2016-10-20..2017-04-21) K=5 done
+[walk-forward] fold 2 (2017-04-24..2017-10-19) K=3 done
+[walk-forward] fold 2 (2017-04-24..2017-10-19) K=5 done
+[walk-forward] fold 3 (2017-10-20..2018-04-23) K=3 done
+[walk-forward] fold 3 (2017-10-20..2018-04-23) K=5 done
+[walk-forward] fold 4 (2018-04-24..2018-10-19) K=3 done
+[walk-forward] fold 4 (2018-04-24..2018-10-19) K=5 done
+[walk-forward] fold 5 (2018-10-22..2019-04-24) K=3 done
+[walk-forward] fold 5 (2018-10-22..2019-04-24) K=5 done
+[walk-forward] fold 6 (2019-04-25..2019-10-22) K=3 done
+[walk-forward] fold 6 (2019-04-25..2019-10-22) K=5 done
+[walk-forward] fold 7 (2019-10-23..2020-04-23) K=3 done
+[walk-forward] fold 7 (2019-10-23..2020-04-23) K=5 done
+[walk-forward] fold 8 (2020-04-24..2020-10-21) K=3 done
+[walk-forward] fold 8 (2020-04-24..2020-10-21) K=5 done
+[walk-forward] fold 9 (2020-10-22..2021-04-23) K=3 done
+[walk-forward] fold 9 (2020-10-22..2021-04-23) K=5 done
+[walk-forward] fold 10 (2021-04-26..2021-10-21) K=3 done
+[walk-forward] fold 10 (2021-04-26..2021-10-21) K=5 done
+[walk-forward] fold 11 (2021-10-22..2022-04-22) K=3 done
+[walk-forward] fold 11 (2021-10-22..2022-04-22) K=5 done
+[walk-forward] fold 12 (2022-04-25..2022-10-21) K=3 done
+[walk-forward] fold 12 (2022-04-25..2022-10-21) K=5 done
+[walk-forward] fold 13 (2022-10-24..2023-04-25) K=3 done
+[walk-forward] fold 13 (2022-10-24..2023-04-25) K=5 done
+[walk-forward] fold 14 (2023-04-26..2023-10-24) K=3 done
+[walk-forward] fold 14 (2023-04-26..2023-10-24) K=5 done
+
+Folds completed: 14
+
+====================================================================================================
+ROLLING WALK-FORWARD (14 folds x 126-day test) - SP500 / centroid
+====================================================================================================
+ K  n_clusters  folds  cluster_mean  cluster_std  ref_mean  random_mean  universe_mean  win_vs_random_%  win_vs_universe_%  win_vs_ref_%  p(cluster>random)  p(cluster>universe)
+ 3          20     14         0.801        1.358     1.010        0.879           1.27           50.000             28.571        35.714              0.766                0.099
+ 3          40     14         1.059        1.421     1.010        0.879           1.27           50.000             42.857        50.000              0.495                0.428
+ 3          60     14         0.785        0.935     1.010        0.879           1.27           42.857             28.571        28.571              0.613                0.046
+ 5          20     14         0.831        0.967     1.055        0.953           1.27           50.000             35.714        35.714              0.554                0.097
+ 5          40     14         1.222        1.486     1.055        0.953           1.27           64.286             50.000        50.000              0.411                0.877
+ 5          60     14         1.092        1.074     1.055        0.953           1.27           57.143             28.571        57.143              0.544                0.484
+
+win_% = share of folds where the cluster portfolio had higher out-of-sample Sharpe.
+p = two-sided paired t-test on per-fold Sharpe difference (small = unlikely to be chance).
+
+Saved cluster_qpo/testing.py/rolling_wf_sp500_centroid.csv and cluster_qpo/testing.py/rolling_wf_sp500_centroid_summary.csv
