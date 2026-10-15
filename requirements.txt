@@ -1,0 +1,19 @@
+# cluster_qpo dependencies
+# Tested with: pandas 3.0.5, numpy 2.5.2, scipy 1.18.1, matplotlib 3.11.1,
+#              seaborn 0.13.2, yfinance 1.7.0, pyarrow 25.0.1, pennylane 0.45.1
+
+# --- Clustering, evaluation, plots, data ---
+pandas
+numpy
+scipy
+matplotlib
+seaborn
+yfinance
+pyarrow          # parquet price cache
+
+# --- Only needed for the QAOA parts (run_clustered_portfolio.py,
+#     validation.py, run_validation.py). These also require the separate
+#     `qpo` package (qpo/problem, qpo/solvers, qpo/backends) on PYTHONPATH. ---
+pennylane>=0.35
+scikit-learn>=1.3
+pyyaml>=6.0
